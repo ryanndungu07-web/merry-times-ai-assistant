@@ -1,25 +1,26 @@
-/* ===========================
-   Merry Times School Website
-=========================== */
+/* ===============================
+   Merry Times School AI Assistant
+================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
     background:#f5f7fb;
-    color:#1d1d1d;
-    line-height:1.6;
+    color:#222;
 }
 
-/* NAVIGATION */
+/* ===============================
+   NAVBAR
+================================== */
 
 nav{
     background:#0B2E59;
-    color:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -29,47 +30,66 @@ nav{
     z-index:1000;
 }
 
-.logo-area{
+.brand{
     display:flex;
     align-items:center;
+    text-decoration:none;
     gap:15px;
+    color:white;
 }
 
-.logo-area img{
-    width:65px;
-    height:65px;
+.brand img{
+    width:70px;
+    height:70px;
     border-radius:50%;
     background:white;
     padding:5px;
 }
 
-.logo-area h2{
+.brand-text h2{
     font-size:24px;
 }
 
-.logo-area p{
+.brand-text p{
     color:#D4AF37;
     font-size:14px;
 }
 
-.chat-button{
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
     text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#D4AF37;
+}
+
+.chat-button{
     background:#D4AF37;
-    color:#0B2E59;
+    color:#0B2E59 !important;
     padding:12px 22px;
     border-radius:30px;
     font-weight:bold;
-    transition:.3s;
 }
 
 .chat-button:hover{
     transform:scale(1.05);
 }
 
-/* HERO */
+/* ===============================
+   HERO
+================================== */
 
 .hero{
-    background:linear-gradient(rgba(11,46,89,.88),rgba(11,46,89,.88)),
+    background:linear-gradient(rgba(11,46,89,.85),rgba(11,46,89,.85)),
     url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
@@ -79,25 +99,26 @@ nav{
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:50px;
     margin-bottom:20px;
 }
 
 .hero p{
-    max-width:720px;
+    max-width:700px;
     margin:auto;
     font-size:20px;
+    line-height:1.8;
 }
 
 .start-chat{
     display:inline-block;
-    margin-top:40px;
+    margin-top:35px;
     background:#D4AF37;
     color:#0B2E59;
     text-decoration:none;
-    padding:18px 35px;
+    padding:18px 40px;
     border-radius:40px;
-    font-weight:600;
+    font-weight:bold;
     transition:.3s;
 }
 
@@ -105,7 +126,9 @@ nav{
     transform:translateY(-5px);
 }
 
-/* SERVICES */
+/* ===============================
+   SERVICES
+================================== */
 
 .services{
     padding:80px 8%;
@@ -114,13 +137,13 @@ nav{
 .services h2{
     text-align:center;
     color:#0B2E59;
-    margin-bottom:50px;
+    margin-bottom:45px;
     font-size:36px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
 }
 
@@ -128,7 +151,8 @@ nav{
     background:white;
     padding:35px;
     border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -145,7 +169,9 @@ nav{
     color:#666;
 }
 
-/* AI SECTION */
+/* ===============================
+   AI SECTION
+================================== */
 
 .assistant{
     background:#0B2E59;
@@ -170,9 +196,9 @@ nav{
     display:inline-block;
     background:#D4AF37;
     color:#0B2E59;
+    text-decoration:none;
     padding:18px 45px;
     border-radius:40px;
-    text-decoration:none;
     font-size:20px;
     font-weight:bold;
     transition:.3s;
@@ -182,30 +208,35 @@ nav{
     transform:scale(1.05);
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+================================== */
 
 footer{
-    background:#061c38;
+    background:#061C38;
     color:white;
     text-align:center;
     padding:25px;
 }
 
-/* MOBILE */
+/* ===============================
+   MOBILE
+================================== */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
 nav{
     flex-direction:column;
     gap:20px;
 }
 
-.hero{
-    padding:90px 20px;
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .hero h1{
-    font-size:34px;
+    font-size:36px;
 }
 
 .hero p{
@@ -214,6 +245,11 @@ nav{
 
 .services{
     padding:60px 20px;
+}
+
+.brand{
+    flex-direction:column;
+    text-align:center;
 }
 
 }
