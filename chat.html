@@ -182,29 +182,23 @@
 </div>
 
 <script>
-
-<script>
-
 async function sendMessage() {
 
-    let input = document.getElementById("message");
-    let chat = document.getElementById("chatBox");
+    const input = document.getElementById("message");
+    const chat = document.getElementById("chatBox");
 
-    let message = input.value.trim();
+    const message = input.value.trim();
 
-    if (message === "") return;
+    if (!message) return;
 
-    // Show user's message
     chat.innerHTML += `
         <div class="message user">
             ${message}
         </div>
     `;
 
-    // Clear input
     input.value = "";
 
-    // Show thinking message
     chat.innerHTML += `
         <div class="message bot" id="thinking">
             🤖 Thinking...
@@ -215,10 +209,10 @@ async function sendMessage() {
 
     try {
 
-        console.log("Sending to Make:", message);
+        console.log("Sending:", message);
 
         const response = await fetch(
-            "https://hook.eu1.make.com/uyaijksi7692dmtyl6mmcb33oyht6hzp",
+            "YOUR_WEBHOOK_URL",
             {
                 method: "POST",
                 headers: {
@@ -230,7 +224,7 @@ async function sendMessage() {
             }
         );
 
-        console.log("Response:", response);
+        console.log("Status:", response.status);
 
         const reply = await response.text();
 
@@ -239,7 +233,7 @@ async function sendMessage() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Error:", error);
 
         document.getElementById("thinking").innerHTML =
             "❌ Unable to contact the assistant.";
@@ -248,9 +242,6 @@ async function sendMessage() {
 
     chat.scrollTop = chat.scrollHeight;
 }
-
-</script>
-
 </script>
 
 </body>
